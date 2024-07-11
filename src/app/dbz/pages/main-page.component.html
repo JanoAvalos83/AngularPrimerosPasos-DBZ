@@ -1,0 +1,26 @@
+<h1>DBZ Personajes</h1>
+<hr>
+
+<div class="row">
+  <div class="col">
+
+    <!-- <dbz-list [characterList]="dbzService.characters()" (onDelete)="dbzService.onDeleteCharacterbyid($event)" ></dbz-list> -->
+    <dbz-list [characterList]="characters" (onDelete)="onDeleteCharacter($event)" ></dbz-list>
+
+  </div>
+
+<!-- Para que mi main page escucje el evento submit de add characterdebo tener la siguiente sintaxis
+<dbz-add-character (onNewCharacter)="onNewCharacter($event)"></dbz-add-character>
+en donde
+-(onNewCharacter) es el evento a escuchar y $event es el tipo de elemento que se escucha
+(programado por angular), en este caso un character
+
+-"onNewCharacter($event)" es el metodo definido en main-page.component.ts
+que recive el dato $event de tipo Character
+-->
+
+  <div class="col">
+    <dbz-add-character (onNewCharacter)="onNewCharacter($event)"></dbz-add-character>
+
+  </div>
+</div>

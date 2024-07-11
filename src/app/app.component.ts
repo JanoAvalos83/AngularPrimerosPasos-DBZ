@@ -9,11 +9,11 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
 })
 export class AppComponent {
-  public title:string = 'Hola mundo';
+  public title:string   = 'Hola mundo';
   public counter:number = 10;
 
   incrementCounterBy(value:number):void{
-    this.counter +=value;
+    this.counter += value;
   }
 
   resetCounter():void{

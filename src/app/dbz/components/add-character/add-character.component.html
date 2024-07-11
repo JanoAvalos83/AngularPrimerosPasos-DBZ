@@ -1,0 +1,39 @@
+<h4>Agregar Personaje</h4>
+<form class="row" (ngSubmit)="emitCharacter()">
+
+  <input
+    type="text"
+    [(ngModel)]="character.name"
+    name="name"
+    class="form-control mb-2"
+    placeholder="Nombre">
+
+  <input
+    type="number"
+    [(ngModel)]="character.power"
+    name="power"
+    class="form-control mb-2"
+    placeholder="Poder">
+    <!-- el boton no deberia haber un click,
+     ya que en realidad se debe esperar un evento submit,
+     si bien tiene el comportamiento esperado,
+     no corresponde, se debe poner el evento en la etiqueta <form (ngSubmit)="emitCharacter()">
+    es ahi donde se realiza la propagacion del formulario para el backend
+
+  <button type="submit" (click)="emitCharacter()" class="btn btn-primary">
+    Agregar
+  </button>
+    -->
+
+  <button type="submit" class="btn btn-primary">
+    Agregar
+  </button>
+</form>
+
+
+
+<!-- <pre> es una etiqueta predefinida por boostrap
+  si ponemos {{character}} al pasarlo a string mostrara
+  [object Object]. Podemos usar pipe "|" json y visializarlo de otra manera-->
+
+<pre> {{character | json}} </pre>
